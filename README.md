@@ -40,7 +40,7 @@ The app includes some basic authentication and distinguishes between admin and m
 ---
 ## Running the application
 
-##### Running Locally
+#### Running Locally
 
 1. Build the application:
 
@@ -58,7 +58,7 @@ The app includes some basic authentication and distinguishes between admin and m
 	mvn test
 	```
 
-##### Run from Docker
+#### Run from Docker
 
 1. Build the image
 
@@ -72,7 +72,7 @@ The app includes some basic authentication and distinguishes between admin and m
    docker run -p 8080:8080 beercatalogue
    ```
    
-##### Docker & Kubernetes Setup
+#### Docker & Kubernetes Setup
 To run the app on Minikube, you must build the Docker image inside Minikube's Docker daemon:
 
 ```bash
@@ -132,16 +132,16 @@ curl -v -X POST http://localhost:8080/api/beers \
 
 ## Next steps
 
-####Authentication
+#### Authentication
 Currently the application uses a very basic form of authentication. Although Users are an entity from the database they can't be created, updated or destroyed. Also, said Users' roles should probably also be an entity to properly scale this project.
 Using JWT for authentication would be a perfect next step enabling token based authentication.
 
-####Persistence
+#### Persistence
 Using a persistent DB is the logical choice given the nature of this application. Something like PostgreSQL could be used and maybe deployed on the cloud.
 
-####Schemas
+#### Schemas
 I've created diferent return schemas (Detail, Summary) just to showcase their use. It is probable that the Summary schemas should contain more info, but as the system scales they'll probable be needed.
 
-####Images
+#### Images
 Images could be added to both Beers (promotional image of the beer for example) or Manufacturers (logos). 
 This could be done (for simplicity) by directly adding a byte[] field for any Entity. But this would probably lead to performance and scalability problems on the long term. Using a Cloud Storage for said images is probably the most scalable and durable solution.
